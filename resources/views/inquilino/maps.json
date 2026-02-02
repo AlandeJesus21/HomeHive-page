@@ -1,0 +1,35 @@
+{
+   "routes" : 
+   [
+      {
+         "legs" : 
+         [
+            {
+               "distance" : 
+               {
+                  "text" : "119 km",
+                  "value" : 118684
+               },
+               "duration" : 
+               {
+                  "text" : "2h 53 min",
+                  "value" : 10383
+               },
+               "end_address" : "Carr. Zona Arqueológica \" Palenque \", Sin Nombre, 29960 Palenque, Chis., México",
+               "end_location" : 
+               {
+                  "lat" : 17.5001482,
+                  "lng" : -92.0105614
+               },
+               "start_address" : "Vía Sin Nombre, 29950 Chis., México",
+               "start_location" : 
+               {
+                  "lat" : 16.9159295,
+                  "lng" : -92.1191468
+               }
+            }
+         ],
+         "summary" : "Ocosingo - Palenque/Palenque - Ocosingo/México 199"
+      }
+   ]
+}
