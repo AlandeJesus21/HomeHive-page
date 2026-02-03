@@ -3,7 +3,7 @@
     <div class="container py-4">
 
         <h3 class="fw-bold mb-3">
-            Comentarios de {{ $propiedad->titulo }} – {{ $propiedad->barrio }}
+            Comentarios de {{ $propiedad->titulo }} {{ $propiedad->barrio }}
         </h3>
 
         <ul class="nav nav-tabs mb-4">

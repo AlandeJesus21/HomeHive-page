@@ -2,7 +2,7 @@
 
     <div class="container py-4">
 
-        <h3 class="fw-bold mb-4">Mis Favoritos ❤️</h3>
+        <h3 class="fw-bold mb-4">Mis Favoritos</h3>
 
         @if ($favoritos->count() === 0)
         <div class="text-center text-muted py-5">
@@ -42,7 +42,7 @@
                         </p>
 
                         <p class="text-muted small">
-                            {{ $prop->ubicacion }}, Ocosingo, Chiapas
+                            {{ $prop->barrio }} {{ $prop->calle }}, Ocosingo, Chiapas
                         </p>
 
                         <a href="/inquilino/{{ $prop->id }}/vermas" class="btn btn-outline-dark btn-sm">

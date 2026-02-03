@@ -12,7 +12,7 @@
     <div class="container py-4">
 
         <h3 class="fw-bold mb-3">
-            {{ $propiedad->titulo }} – {{ $propiedad->barrio }}
+            {{ $propiedad->titulo }} {{ $propiedad->barrio }}
         </h3>
 
         <ul class="nav nav-underline mb-4">
@@ -68,8 +68,8 @@
                 </div>
             </div>
             <iframe width="260" height="270" style="border:0" loading="lazy" allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDfwvr04auLWuNeHRtp9AjIUuCavarueJs
-    &origin=16.9083133,-92.119888&destination=17.50017270827112,-92.0105730000001">
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDfwvr04auLWuNeHRtp9AjIUuCavarueJs&origin=16.9083133,-92.119888&destination=17.50017270827112,-92.0105730000001">
             </iframe>
 
         </div>
@@ -86,7 +86,6 @@
     echo "<center><b> $resumen </b><br><b>Distancia: $distancia</b>. Duración: $duracion</b></center>";
 
     ?>
-
 
     </div>
 

@@ -121,15 +121,7 @@
 
                             <div class="col-12">
                                 <label class="form-label">Servicios:</label><br>
-
-                                <input type="checkbox" name="servicio[]" value="agua" class="form-check-input me-2">
-                                <label class="form-check-label">Agua</label>
-                                <input type="checkbox" name="servicio[]" value="electricidad"
-                                    class="form-check-input me-2">
-                                <label class="form-check-label">Luz</label>
-                                <input type="checkbox" name="servicio[]" value="internet" class="form-check-input me-2">
-                                <label class="form-check-label">Internet</label>
-                                <div class="invalid-feedback">Seleccione al menos un servicio.</div>
+                                <input type="text" name="servicio" value="" class="form-control">
                             </div>
 
 

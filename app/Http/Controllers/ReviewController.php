@@ -37,7 +37,7 @@ class ReviewController extends Controller
     }
 
     // Formulario de edición
-    public function edit($id)
+        public function edit($id)
     {
         $review = Review::findOrFail($id);
 
@@ -45,8 +45,9 @@ class ReviewController extends Controller
             abort(403);
         }
 
-        return view('reviews.edit', compact('review'));
+        return view('inquilino.editarcom', compact('review'));
     }
+    
 
     // Actualizar reseña
     public function update(Request $request, $id)
@@ -68,7 +69,7 @@ class ReviewController extends Controller
         ]);
 
         return redirect()
-            ->route('inquilino.vermas', $review->propiedad_id)
+            ->route('inquilino.comentarios', $review->propiedad_id)
             ->with('success', 'Reseña actualizada correctamente');
     }
 

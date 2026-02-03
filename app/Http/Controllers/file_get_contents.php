@@ -12,7 +12,7 @@ $propiedad->ciudad . ', México'
 );
 
 $url = "https://maps.google.com/maps/api/directions/json"
-. "?key=" . config('services.google.maps_key')
+. "?key= AIzaSyC6ioXLYMUUNVpqc_zfQ4qave1saAkb-Q4"
 . "&origin=$origin"
 . "&destination=$destination"
 . "&mode=driving";
