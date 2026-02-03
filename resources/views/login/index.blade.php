@@ -6,7 +6,7 @@
                 <h3 class="fw-bold mb-4">"Todo gran cambio empieza con un buen lugar"</h3>
                 <p>Encuentra el espacio ideal o compártelo con quien lo necesita.</p>
                 <div class="my-4">
-                    <img src="{{ asset('images/logo2.png') }}" alt="StayGO" style="max-width:130px;" class="">
+                    <img src="{{ asset('images/logo2.png') }}" alt="HomeHIve" style="max-width:130px;" class="">
                 </div>
                 <div>
                     <a href="/form/register" class="btn btn-outline-dark">Registrarse</a>

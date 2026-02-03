@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens; // <-- Agregar esto
+use Laravel\Sanctum\HasApiTokens;
 use App\Models\Propiedad;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable; // <-- Agregar HasApiTokens
+    use HasApiTokens, HasFactory, Notifiable;
+
+    const ROL_INQUILINO   = 'inquilino';
+    const ROL_ARRENDADOR  = 'arrendador';
+    const ROL_ADMIN       = 'admin';
 
     protected $fillable = [
         'name',
@@ -35,6 +39,11 @@ class User extends Authenticatable
 
     public function favoritos()
     {
-        return $this->belongsToMany(Propiedad::class, 'favoritos', 'user_id', 'propiedad_id');
+        return $this->belongsToMany(
+            Propiedad::class,
+            'favoritos',
+            'user_id',
+            'propiedad_id'
+        );
     }
 }

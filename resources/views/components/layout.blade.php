@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeHive</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+
 </head>
 
 <body class="bg-light">
@@ -15,7 +17,7 @@
 
             <!-- LOGO -->
             <a class="navbar-brand fw-bold" href="/">
-                <img src="{{ asset('images/Logo2.png') }}" alt="StayGO" width="40" class="me-2">
+                <img src="{{ asset('images/Logo2.png') }}" alt="HomeHIve" width="40" class="me-2">
                 HomeHive
             </a>
 

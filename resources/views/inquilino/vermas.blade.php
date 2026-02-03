@@ -69,7 +69,7 @@
             </div>
             <iframe width="260" height="270" style="border:0" loading="lazy" allowfullscreen
                 referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDfwvr04auLWuNeHRtp9AjIUuCavarueJs
-    &origin=16.915972,-92.119888&destination=17.50017270827112,-92.0105730000001">
+    &origin=16.9083133,-92.119888&destination=17.50017270827112,-92.0105730000001">
             </iframe>
 
         </div>

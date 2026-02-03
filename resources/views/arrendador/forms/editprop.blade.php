@@ -1,4 +1,4 @@
-<x-arrendador.layout title="Modificación de Propiedades - StayGO">
+<x-arrendador.layout title="Modificación de Propiedades - HomeHIve">
 
     <style>
     body {
@@ -37,7 +37,7 @@
         height: 100%;
     }
 
-    .staygo-logo {
+    .HomeHIve-logo {
         font-family: serif;
         font-size: 2.5rem;
         font-weight: bold;
@@ -57,10 +57,10 @@
                                 <h2 class="fw-bold fs-2 mb-3">“Todo gran cambio empieza con un buen lugar”</h2>
                                 <p class="text-muted mb-4">Encuentra el espacio ideal o compártelo con quien lo
                                     necesita.</p>
-                                <h3 class="staygo-logo">“HomeHive”</h3>
+                                <h3 class="HomeHIve-logo">“HomeHive”</h3>
 
                                 <div class="mb-4">
-                                    <img src="{{ asset('images/Logo.webp') }}" alt="Logo StayGO Grande"
+                                    <img src="{{ asset('images/Logo2.png') }}" alt="Logo HomeHIve Grande"
                                         class="main-logo bg-light">
                                 </div>
 

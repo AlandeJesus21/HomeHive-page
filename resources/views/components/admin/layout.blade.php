@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Admin - StayGO</title>
+    <title>Admin - HomeHIve</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -42,8 +42,8 @@
 
                 <!-- LOGO -->
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
-                    <img src="{{ asset('images/Logo.webp') }}" alt="Logo StayGO" class="navbar-logo me-2">
-                    <span class="fw-bold text-tu-hogar fs-5">StayGO Admin</span>
+                    <img src="{{ asset('images/Logo2.png') }}" alt="Logo HomeHIve" class="navbar-logo me-2">
+                    <span class="fw-bold text-tu-hogar fs-5">HomeHIve Admin</span>
                 </a>
 
                 <!-- PERFIL SIEMPRE VISIBLE (MÓVIL + ESCRITORIO) -->
@@ -127,7 +127,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-dark text-white py-4 mt-auto text-center">
-        <p class="mb-1">© 2025 StayGO - Administración</p>
+        <p class="mb-1">© 2025 HomeHIve - Administración</p>
         <small>Panel de control para gestores y administradores</small>
     </footer>
 

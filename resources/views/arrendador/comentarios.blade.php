@@ -1,4 +1,4 @@
-<x-arrendador.layout title="Reseñas - StayGO">
+<x-arrendador.layout title="Reseñas - HomeHIve">
 
     <div class="container py-5">
 

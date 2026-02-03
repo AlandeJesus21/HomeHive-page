@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Editar Perfil - StayGO</title>
+    <title>Editar Perfil - HomeHIve</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -26,7 +26,7 @@
 
     <!-- NAVBAR SIMPLE -->
     <nav class="navbar navbar-light bg-white shadow-sm px-4">
-        <a class="navbar-brand fw-bold" href="{{ url('/') }}">StayGO</a>
+        <a class="navbar-brand fw-bold" href="{{ url('/') }}">HomeHIve</a>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf

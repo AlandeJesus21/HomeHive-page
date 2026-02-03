@@ -2,12 +2,13 @@
 <html lang="es">
 
 <head>
-    <title>Inquilino - StayGO</title>
+    <title>Inquilino - HomeHIve</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 
     <style>
     body {
@@ -43,8 +44,8 @@
 
                 <!-- LOGO -->
                 <a class="navbar-brand d-flex align-items-center" href="/inquilino">
-                    <img src="{{ asset('images/Logo.webp') }}" class="navbar-logo me-2">
-                    <span class="fw-bold fs-5 text-tu-hogar">StayGO</span>
+                    <img src="{{ asset('images/Logo2.png') }}" class="navbar-logo me-2">
+                    <span class="fw-bold fs-5 text-tu-hogar">HomeHIve</span>
                 </a>
 
                 <!-- PERFIL (SIEMPRE VISIBLE) -->
@@ -99,7 +100,6 @@
 
                         <li class="nav-item"><a class="nav-link" href="/inquilino/favoritos">Favoritos</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="/appreviews">Dejar opinión</a></li>
 
                     </ul>
                 </div>
@@ -157,14 +157,13 @@
                             </li>
                             <li>
                                 <a class="text-white me-3" href="/acerca">Acerca de nosotros</a>
-
-                            </li>
-                            <!-- <li>
-                                <a href="#!" class="text-body">Link 3</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-body">Link 4</a>
-                            </li> -->
+                                <a class="text-white me-3" href="/appreviews">Dejar opinión</a>
+                            </li>
+                            <!-- <li> -->
+                            <!-- <a href="#!" class="text-body">Link 4</a>
+                            </li>  -->
                         </ul>
 
 

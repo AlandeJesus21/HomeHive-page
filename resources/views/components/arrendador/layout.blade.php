@@ -5,7 +5,7 @@
     <title>{{ $title ?? 'HomeHive' }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -44,7 +44,7 @@
 
                 <!-- LOGO -->
                 <a class="navbar-brand d-flex align-items-center" href="#" onclick="execute('/')">
-                    <img src="{{ asset('images/Logo.webp')}}" alt="Logo HomeHive" class="navbar-logo me-2">
+                    <img src="{{ asset('images/Logo2.png')}}" alt="Logo HomeHive" class="navbar-logo me-2">
                     <span class="fw-bold text-tu-hogar fs-5">HomeHive</span>
                 </a>
 
@@ -99,15 +99,11 @@
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" onclick="execute('/arrendador')">Inicio</a>
+                            <a class="nav-link text-dark" href="/arrendador">Inicio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" onclick="execute('/comentario')">Dejar opinión</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" onclick="execute('/registerprop')">Registro de propiedades</a>
+                            <a class="nav-link text-dark" href="/registerprop">Registro de propiedades</a>
                         </li>
 
                     </ul>
@@ -170,10 +166,10 @@
                                 <a class="text-white me-3" href="/acerca">Acerca de nosotros</a>
 
                             </li>
-                            <!-- <li>
-                                <a href="#!" class="text-body">Link 3</a>
-                            </li>
                             <li>
+                                <a class="text-white me-3" href="/comentario">Dejar opinión</a>
+                            </li>
+                            <!-- <li>
                                 <a href="#!" class="text-body">Link 4</a>
                             </li> -->
                         </ul>

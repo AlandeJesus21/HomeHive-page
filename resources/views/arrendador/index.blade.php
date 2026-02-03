@@ -1,4 +1,4 @@
-<x-arrendador.layout title="Tus Propiedades - StayGO">
+<x-arrendador.layout title="Tus Propiedades">
 
     <div class="container py-5">
 

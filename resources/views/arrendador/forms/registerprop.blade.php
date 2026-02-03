@@ -1,4 +1,4 @@
-<x-arrendador.layout title="Registro de Propiedades - StayGO">
+<x-arrendador.layout title="Registro de Propiedades - HomeHIve">
 
     <style>
     /* Estilos base */
@@ -19,7 +19,7 @@
     }
 
     /* Estilos específicos para el formulario */
-    .text-staygo {
+    .text-HomeHIve {
         color: var(--bs-gray-700);
     }
 
@@ -51,10 +51,10 @@
                     <h2 class="fw-bold mb-3">“Todo gran cambio empieza con un buen lugar”</h2>
                     <p class="mb-5">Encuentra el espacio ideal o compártelo con quien lo necesita.</p>
 
-                    <h1 class="fw-bold text-staygo mb-3">“HomeHive”</h1>
+                    <h1 class="fw-bold text-HomeHIve mb-3">“HomeHive”</h1>
 
                     <div class="mb-4">
-                        <img src="{{ asset('images/Logo.webp')}}" alt="Logo StayGO Grande" class="main-logo">
+                        <img src="{{ asset('images/Logo2.png')}}" alt="Logo HomeHIve Grande" class="main-logo">
                     </div>
 
                     <button class="btn btn-outline-secondary btn-lg" onclick="execute('/propiedades')">
