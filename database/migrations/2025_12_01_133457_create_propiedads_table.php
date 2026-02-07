@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('tipo', 50);
             $table->string('barrio', 50);
             $table->string('calle', 50);
+             $table->decimal('latitud', 10, 7);
+            $table->decimal('longitud', 10, 7);
             $table->decimal('precio', 9, 2);
             $table->string('forma_pago', 20);
             $table->string('servicio', 100);

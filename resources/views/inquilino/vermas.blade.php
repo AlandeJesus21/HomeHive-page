@@ -67,26 +67,15 @@
 
                 </div>
             </div>
-            <iframe width="260" height="270" style="border:0" loading="lazy" allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDfwvr04auLWuNeHRtp9AjIUuCavarueJs&origin=16.9083133,-92.119888&destination=17.50017270827112,-92.0105730000001">
+            <iframe width="100%" height="270" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDfwvr04auLWuNeHRtp9AjIUuCavarueJs&q={{ $propiedad->latitud }},{{ $propiedad->longitud }}&zoom=18">
             </iframe>
+
 
         </div>
 
-        <?php    
-    $respuesta = file_get_contents("https://maps.google.com/maps/api/directions/json?key=AIzaSyC6ioXLYMUUNVpqc_zfQ4qave1saAkb-Q4&origin=16.915972,-92.119888&destination=17.50017270827112,-92.0105730000001&mode=driving");
-
-    $json = json_decode($respuesta);
-    
-    $distancia = $json->{"routes"}[0]->{"legs"}[0]->{"distance"}->{"text"};
-    $duracion = $json->{"routes"}[0]->{"legs"}[0]->{"duration"}->{"text"};
-    $resumen = $json->{"routes"}[0]->{"summary"};
-
-    echo "<center><b> $resumen </b><br><b>Distancia: $distancia</b>. Duración: $duracion</b></center>";
-
-    ?>
 
     </div>
 
     </x-layout>
+    <!-- AIzaSyDfwvr04auLWuNeHRtp9AjIUuCavarueJs -->

@@ -101,6 +101,8 @@
                                 <div class="invalid-feedback">Ingrese la calle.</div>
                             </div>
 
+                            <input type="hidden" name="latitud" id="latitud">
+                            <input type="hidden" name="longitud" id="longitud">
 
                             <div class="col-12">
                                 <label class="form-label">Precio:</label>
@@ -149,6 +151,15 @@
                                 <input type="file" class="form-control" name="imagen" accept="image/*">
                             </div>
 
+                            <div class="col-12">
+                                <label class="form-label">Ubicación en el mapa:</label>
+                                <div id="map" style="height: 300px; border-radius: 10px;"></div>
+                                <small class="text-muted">
+                                    Haz clic en el mapa para marcar la ubicación exacta de la propiedad
+                                </small>
+                            </div>
+
+
                             <div class="col-12 mt-4">
                                 <button class="btn btn-dark w-100 btn-lg" type="submit">Publicar</button>
                             </div>
@@ -164,6 +175,72 @@
 
 
     <x-slot:scripts>
+
+        <script>
+        let map, marker, geocoder;
+
+        function initMap() {
+            const centro = {
+                lat: 16.90864,
+                lng: -92.094893
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: centro,
+            });
+
+            geocoder = new google.maps.Geocoder();
+
+            map.addListener("click", function(event) {
+
+                if (marker) marker.setMap(null);
+
+                marker = new google.maps.Marker({
+                    position: event.latLng,
+                    map: map,
+                });
+
+                const lat = event.latLng.lat();
+                const lng = event.latLng.lng();
+
+                document.getElementById("latitud").value = lat;
+                document.getElementById("longitud").value = lng;
+
+                // Autocompletar calle y barrio
+                geocoder.geocode({
+                    location: {
+                        lat,
+                        lng
+                    }
+                }, function(results, status) {
+                    if (status === "OK" && results[0]) {
+
+                        let calle = "";
+                        let barrio = "";
+
+                        results[0].address_components.forEach(c => {
+                            if (c.types.includes("route")) calle = c.long_name;
+                            if (
+                                c.types.includes("sublocality") ||
+                                c.types.includes("sublocality_level_1") ||
+                                c.types.includes("neighborhood")
+                            ) barrio = c.long_name;
+                        });
+
+                        if (calle) document.querySelector('[name="calle"]').value = calle;
+                        if (barrio) document.querySelector('[name="barrio"]').value = barrio;
+                    }
+                });
+            });
+        }
+        </script>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6ioXLYMUUNVpqc_zfQ4qave1saAkb-Q4&callback=initMap"
+            async defer>
+        </script>
+
 
         <script>
         function execute(url) {

@@ -45,6 +45,8 @@ class PropiedadController extends Controller
             'tipo' => 'required|string',
             'barrio' => 'required|string',
             'calle' => 'required|string',
+            'latitud' => 'required|numeric',
+            'longitud' => 'required|numeric',
             'precio' => 'required|numeric|min:1',
             'forma_pago' => 'required|string',
             'servicio'   => 'required|string',
@@ -60,6 +62,8 @@ class PropiedadController extends Controller
         $propiedad->tipo = $request->tipo;
         $propiedad->barrio = $request->barrio;
         $propiedad->calle = $request->calle;
+        $propiedad->latitud = $request->latitud;
+        $propiedad->longitud = $request->longitud;
         $propiedad->precio = $request->precio;
         $propiedad->forma_pago = $request->forma_pago;
         $propiedad->servicio = $request->servicio;
