@@ -31,10 +31,8 @@
 
             <div class="col-12 col-md-7">
                 <div class="row g-3">
-                    <div class="col-6"><img src="{{ asset('images/cuarto1.png') }}" class="mini-img shadow-sm"></div>
-                    <div class="col-6"><img src="{{ asset('images/cuarto2.png') }}" class="mini-img shadow-sm"></div>
-                    <div class="col-6"><img src="{{ asset('images/cuarto3.png') }}" class="mini-img shadow-sm"></div>
-                    <div class="col-6"><img src="{{ asset('images/cuarto4.png') }}" class="mini-img shadow-sm"></div>
+                    <div class="col-6"><img src="{{ asset('storage/' . $propiedad->imagen) }}"
+                            class="mini-img shadow-sm" width="50" height="80"></div>
                 </div>
             </div>
 

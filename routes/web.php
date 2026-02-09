@@ -166,8 +166,7 @@ Route::middleware(['auth', 'role:arrendador', 'nocache'])->group(function () {
 */
 
 Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
-
-    Route::get('/admin', [AdminController::class, 'indexad'])
+        Route::get('/admin', [AdminController::class, 'indexad'])
         ->name('admin.index');
 
     Route::prefix('usuarios')->group(function () {
@@ -176,6 +175,7 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
         Route::put('{id}', [UserController::class, 'actualizar'])->name('user.update');
         Route::delete('{id}', [UserController::class, 'eliminar'])->name('user.destroy');
     });
+
 
     Route::prefix('propiedades')->group(function () {
         Route::get('/admin/propiedades', [PropertyController::class, 'index'])
@@ -189,5 +189,7 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
 
         Route::delete('{id}', [PropertyController::class, 'destroy'])
             ->name('properties.destroy');
+
+        Route::get('/reporte', [PropertyController::class, 'reporte']);
+        });
     });
-});
