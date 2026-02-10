@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Admin - HomeHIve</title>
+    <title>Admin</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -12,15 +12,29 @@
 
 
     <style>
-    body {
-        background-color: var(--bs-gray-100);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+    :root {
+        --primary-color: #1f3a8a;
+        /* Azul botones */
+        --secondary-bg: #f1f5f9;
+        /* Fondo gris claro */
+        --dark-footer: #1f2937;
+        /* Footer */
     }
 
-    main {
-        flex-grow: 1;
+    body {
+        background-color: var(--secondary-bg);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        border-radius: 12px;
+        padding: 10px 22px;
+    }
+
+    .btn-primary:hover {
+        background-color: #172554;
+        border-color: #172554;
     }
 
     .navbar-logo {
@@ -135,17 +149,14 @@
             <!-- Grid container -->
             <div class="container p-4">
                 <section class="mb-4">
-                    <!-- Facebook -->
-                    <a data-mdb-ripple-init class="text-white me-3" href="#!" role="button"><i
-                            class="bi bi-facebook"></i></a>
+                    <a data-mdb-ripple-init class="text-white me-3" href="https://www.facebook.com/share/18Dr35ekcu/"
+                        role="button"><i class="bi bi-facebook"></i></a>
 
                     <!-- Twitter -->
-                    <a data-mdb-ripple-init class="text-white me-3" href="#!" role="button"><i
-                            class="bi bi-instagram"></i></a>
+                    <a data-mdb-ripple-init class="text-white me-3" href="https://www.instagram.com/homehive384/"
+                        role="button"><i class="bi bi-instagram"></i></a>
 
                     <!-- Google -->
-                    <a data-mdb-ripple-init class="text-white me-3" href="#!" role="button"><i
-                            class="bi bi-tiktok"></i></a>
                 </section>
                 <!--Grid row-->
                 <div class="row">
@@ -187,9 +198,8 @@
                         <h5 class="text-uppercase mb-0">Legal</h5>
 
                         <ul class="list-unstyled">
-                            <li><a class="text-white me-3" href="/privacidad">Política de privacidad</a></li>
-                            <li><a class="text-white me-3" href="/terminos">Términos y condiciones</a></li <li>
-                            <a href="#!" class="text-body">Link 3</a>
+                            <li><a class="text-white me-3" href="/politicas">Política de privacidad</a></li>
+                            <li><a class="text-white me-3" href="/terminos">Términos y condiciones</a></li>
                             </li>
                         </ul>
                     </div>

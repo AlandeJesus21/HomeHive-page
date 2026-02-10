@@ -44,6 +44,13 @@ class Propiedad extends Model
         ];
     }
 
+
+public function user()
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
+
+
     public function reviews()
 {
     return $this->hasMany(Review::class);

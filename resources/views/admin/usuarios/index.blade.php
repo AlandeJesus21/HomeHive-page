@@ -4,9 +4,8 @@
         <h2 class="mt-4 mb-3 fw-bold text-center">Gestión de Usuarios</h2>
 
         <div class="d-flex justify-content-end">
-            <a href="/propiedades/reporte" class="btn btn-primary"> Generar reporte</a>
+            <a href="/usuarios/reporteuser" class="btn btn-primary"> Generar reporte</a>
         </div>
-
         <div class="row justify-content-center">
             <div class="table-responsive border shadow-sm">
                 <table id="myTable" class="table table-striped table-hover align-middle mb-0">

@@ -8,6 +8,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 
+    <style>
+    :root {
+        --primary-color: #1f3a8a;
+        /* Azul botones */
+        --secondary-bg: #f1f5f9;
+        /* Fondo gris claro */
+        --dark-footer: #1f2937;
+        /* Footer */
+    }
+
+    body {
+        background-color: var(--secondary-bg);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        border-radius: 12px;
+        padding: 10px 22px;
+    }
+
+    .btn-primary:hover {
+        background-color: #172554;
+        border-color: #172554;
+    }
+    </style>
+
+
 </head>
 
 <body class="bg-light">
@@ -93,6 +121,7 @@
 
 
     <section class="footer bg-light mt-5">
+
         <!-- Footer -->
         <footer class="bg-dark text-white text-center">
 
@@ -100,17 +129,14 @@
             <!-- Grid container -->
             <div class="container p-4">
                 <section class="mb-4">
-                    <!-- Facebook -->
-                    <a data-mdb-ripple-init class="text-white me-3" href="#!" role="button"><i
-                            class="bi bi-facebook"></i></a>
+                    <a data-mdb-ripple-init class="text-white me-3" href="https://www.facebook.com/share/18Dr35ekcu/"
+                        role="button"><i class="bi bi-facebook"></i></a>
 
                     <!-- Twitter -->
-                    <a data-mdb-ripple-init class="text-white me-3" href="#!" role="button"><i
-                            class="bi bi-instagram"></i></a>
+                    <a data-mdb-ripple-init class="text-white me-3" href="https://www.instagram.com/homehive384/"
+                        role="button"><i class="bi bi-instagram"></i></a>
 
-                    <!-- Google -->
-                    <a data-mdb-ripple-init class="text-white me-3" href="#!" role="button"><i
-                            class="bi bi-tiktok"></i></a>
+
                 </section>
                 <!--Grid row-->
                 <div class="row">
@@ -140,9 +166,6 @@
 
                             </li>
                             <!-- <li>
-                                <a href="#!" class="text-body">Link 3</a>
-                            </li>
-                            <li>
                                 <a href="#!" class="text-body">Link 4</a>
                             </li> -->
                         </ul>
@@ -156,9 +179,8 @@
                         <h5 class="text-uppercase mb-0">Legal</h5>
 
                         <ul class="list-unstyled">
-                            <li><a class="text-white me-3" href="/privacidad">Política de privacidad</a></li>
-                            <li><a class="text-white me-3" href="/terminos">Términos y condiciones</a></li <li>
-                            <a href="#!" class="text-body">Link 3</a>
+                            <li><a class="text-white me-3" href="/politicas">Política de privacidad</a></li>
+                            <li><a class="text-white me-3" href="/terminos">Términos y condiciones</a></li>
                             </li>
                         </ul>
                     </div>

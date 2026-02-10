@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Propiedad;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -23,25 +24,18 @@ class PropertyController extends Controller
 
 
 
+
     public function reporte() {
-        $properties = Propiedad::all();
+        $properties = Propiedad::with('user')
+    ->whereMonth('created_at', now()->month)
+    ->whereYear('created_at', now()->year)
+    ->get();
+
 
         $pdf = Pdf::loadView('admin.reporte.reporte', [
             'properties' => $properties
         ]);
-
-        // Esto es importante: generar el PDF en memoria
-        $pdf->output();
-
-        // Obtener el canvas y dibujar la paginación en cada página
-        $canvas = $pdf->getDomPDF()->getCanvas();
-        $canvas->page_script(function ($pageNumber, $pageCount, $canvas, $fontMetrics) {
-            $text = "Página $pageNumber de $pageCount";
-            $font = $fontMetrics->get_font("Helvetica", "normal");
-            $canvas->text(270, 820, $text, $font, 10); // X,Y ajusta según tu diseño
-        });
-
-        return $pdf->stream('reporte.pdf');
+        return $pdf->stream();
     }
 
 

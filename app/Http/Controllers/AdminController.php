@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +14,20 @@ class AdminController extends Controller
     {
         $users = User::all();
         return view('admin.usuarios.index', compact('users'));
+    }
+
+    public function reporteuser() {
+        $users = User::where('rol', 'inquilino')    
+        ->whereMonth('created_at', now()->month)
+        ->whereYear('created_at', now()->year)
+        ->get();
+
+        $pdf = Pdf::loadView('admin.reporte.reporteuser', [
+            'users' => $users
+        ]);
+
+        return $pdf->stream();
+
     }
 
     public function indexad() 

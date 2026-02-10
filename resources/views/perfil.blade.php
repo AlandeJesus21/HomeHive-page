@@ -9,8 +9,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
+    :root {
+        --primary-color: #1f3a8a;
+        /* Azul botones */
+        --secondary-bg: #f1f5f9;
+        /* Fondo gris claro */
+        --dark-footer: #1f2937;
+        /* Footer */
+    }
+
     body {
-        background-color: #f5f6f7;
+        background-color: var(--secondary-bg);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        border-radius: 12px;
+        padding: 10px 22px;
+    }
+
+    .btn-primary:hover {
+        background-color: #172554;
+        border-color: #172554;
     }
 
     .profile-img {

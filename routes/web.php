@@ -26,6 +26,8 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::view('/acerca', 'main.acerca');
+Route::view('/terminos', 'main.terminos');
+Route::view('/politicas', 'main.politicas');
 
 // Reseñas de la app (públicas)
 Route::get('/comen', [AppReviewController::class, 'main'])
@@ -174,6 +176,8 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
         Route::get('{id}/edit', [UserController::class, 'editar'])->name('user.edit');
         Route::put('{id}', [UserController::class, 'actualizar'])->name('user.update');
         Route::delete('{id}', [UserController::class, 'eliminar'])->name('user.destroy');
+        Route::get('/reporteuser', [AdminController::class, 'reporteuser']);
+
     });
 
 
@@ -191,5 +195,9 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
             ->name('properties.destroy');
 
         Route::get('/reporte', [PropertyController::class, 'reporte']);
+
+
+
         });
+
     });

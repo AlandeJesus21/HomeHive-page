@@ -11,46 +11,44 @@
                     <thead class="table-dark text-center">
                         <tr>
                             <th>Título</th>
-                            <th>Barrio</th>
-                            <th>Calle</th>
-                            <th>Precio</th>
                             <th>Tipo</th>
-                            <th>Estatus</th>
-                            <th>Imagen</th>
-                            <th class="text-end text-nowrap w-auto">Acciones</th>
+                            <th>Barrio</th>
+                            <th>Arrendador</th>
+                            <th class="text-center text-nowrap w-auto">Fecha de registro</th>
+                            <!-- <th class="text-end text-nowrap w-auto">Acciones</th> -->
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($properties as $propiedad)
                         <tr>
-                            <td>{{ $propiedad->titulo }}</td>
-                            <td>{{ $propiedad->barrio }}</td>
-                            <td>{{ $propiedad->calle }}</td>
-                            <td>{{ $propiedad->precio }}</td>
-                            <td>{{ $propiedad->tipo }}</td>
-                            <td>
-                                @if ($propiedad->estatus === 'activo')
-                                <span class="badge bg-success">Activo</span>
-                                @else
-                                <span class="badge bg-secondary">Inactivo</span>
-                                @endif
-                            </td>
-                            <td> <img
-                                    src="{{ $propiedad->imagen ? asset('storage/'.$propiedad->imagen) : 'https://placehold.co/10x10?text=Sin+Imagen' }} "
-                                    width="80" height="50" class="img-fluid rounded mb-2" alt="propiedad"></td>
+                            <td class="text-center text-nowrap">{{ $propiedad->titulo }}</td>
 
-                            <td class="text-end text-nowrap">
-                                <a href="{{ route('properties.edit', $propiedad->id) }}" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-pencil"></i> Editar
-                                </a>
+                            <td class="text-center text-nowrap">
+                                {{ ucfirst($propiedad->tipo) }}
+                            </td>
+
+                            <td class="text-center text-nowrap">{{ $propiedad->barrio }}</td>
+
+                            <td class="text-center text-nowrap">
+                                {{ $propiedad->user->name }} <br>
+                                <small class="text-muted">{{ $propiedad->user->email }}</small>
+                            </td>
+
+                            <td class="text-center text-nowrap">
+                                {{ $propiedad->created_at->format('d/m/Y') }}
+                            </td>
+
+                            <!-- <td class="text-end text-nowrap">
                                 <button class="btn btn-danger btn-sm"
                                     onclick="deleteRecord('/admin/propiedades/{{ $propiedad->id }}/delete')">
-                                    <i class="bi bi-trash"></i> <span class="d-none d-sm-inline">Eliminar</span>
+                                    <i class="bi bi-trash"></i>
+                                    <span class="d-none d-sm-inline">Eliminar</span>
                                 </button>
-                            </td>
+                            </td> -->
                         </tr>
                         @endforeach
                     </tbody>
+
                 </table>
             </div>
         </div>
@@ -69,7 +67,7 @@
         },
         columnDefs: [{
             orderable: false,
-            targets: [9]
+            targets: [5]
         }]
     });
     </script>

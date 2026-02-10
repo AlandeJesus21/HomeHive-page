@@ -85,38 +85,33 @@
 
     <img src="{{ public_path('images/Logo2.png') }}" alt="Logo" class="logo">
 
-    <h1>Reporte Mensual de Propiedades</h1>
+    <h1>Reporte Mensual de Usuarios</h1>
     <div style="text-align: right; font-size: 12pt;">
         Fecha del reporte: {{ date('d/m/Y') }}
     </div>
-    @php
-    \Carbon\Carbon::setLocale('es');
-    @endphp
+    <br>
     <p>
-        Total de propiedades registradas este mes: <strong>{{ now()->translatedFormat('F Y') }}</strong>
+        Este reporte contiene la información de los inquilinos que se registraron en la plataforma HomeHive
+        durante el mes actual.
     </p>
 
-    <table>
+
+    <table id="myTable">
         <thead>
             <tr>
-                <th>Título</th>
-                <th>Tipo</th>
-                <th>Barrio</th>
-                <th>Arrendador</th>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Rol</th>
                 <th>Fecha de registro</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($properties as $propiedad)
+            @foreach ($users as $user)
             <tr>
-                <td>{{ $propiedad->titulo }}</td>
-                <td>{{ ucfirst($propiedad->tipo) }}</td>
-                <td>{{ $propiedad->barrio }}</td>
-                <td>{{ $propiedad->user->name }}
-                    <br>
-                    <small>{{ $propiedad->user->email }}</small>
-                </td>
-                <td>{{ $propiedad->created_at->format('d/m/Y') }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->rol }}</td>
+                <td>{{ $user->created_at }}</td>
             </tr>
             @endforeach
         </tbody>

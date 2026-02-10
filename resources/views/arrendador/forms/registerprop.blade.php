@@ -1,14 +1,6 @@
 <x-arrendador.layout title="Registro de Propiedades - HomeHIve">
 
     <style>
-    /* Estilos base */
-    body {
-        background-color: var(--bs-gray-100);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
     main {
         flex-grow: 1;
     }

@@ -1,22 +1,11 @@
 <x-arrendador.layout title="Modificación de Propiedades - HomeHIve">
 
     <style>
-    body {
-        background-color: #f8f9fa;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    main {
-        flex-grow: 1;
-    }
-
-    .navbar-logo {
+    /* .navbar-logo {
         height: 32px;
         width: auto;
         border-radius: 50%;
-    }
+    } */
 
     .main-logo {
         height: 120px;
