@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\AppReviewController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\PropertyController;
 
 /*
@@ -20,6 +21,59 @@ use App\Http\Controllers\PropertyController;
 | RUTAS PÚBLICAS
 |--------------------------------------------------------------------------
 */
+
+
+Route::get('/auth/google', function () {
+
+    return Socialite::driver('google')->redirect();
+});
+
+
+Route::get('/auth/google/callback', function () {
+
+    $googleUser = Socialite::driver('google')->stateless()->user();
+
+    session([
+        'google_user' => [
+            'name' => $googleUser->getName(),
+            'email' => $googleUser->getEmail(),
+            'google_id' => $googleUser->getId(),
+            'avatar' => $googleUser->getAvatar(),
+        ]
+    ]);
+
+    return redirect('/completar');
+});
+
+
+
+Route::get('/completar', function () {
+    return view('auth.completarform');
+});
+
+
+Route::post('/save', function () {
+
+    $google = session('google_user');
+
+    $user = \App\Models\User::create([
+        'name' => $google['name'],
+        'email' => $google['email'],
+        'google_id' => $google['google_id'],
+        'avatar' => $google['avatar'],
+        'rol' => request('rol'),
+        'password' => Hash::make(request('password')),
+    ]);
+
+    auth()->login($user);
+
+    return redirect()->route('home');
+});
+
+
+
+
+
 
 Route::get('/', function () {
     return view('main.index');
@@ -44,6 +98,8 @@ Route::get('/appreviews', [AppReviewController::class, 'index'])
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])
     ->name('login');
+
+Route::get('/olvidaste', [ResetPasswordController:: class, 'showResetForm'])-> name('Resetpass');
 
 Route::post('/login', [LoginController::class, 'login']);
 

@@ -55,16 +55,30 @@
                                     <button type="submit" class="btn btn-primary">
                                         Iniciar sesión
                                     </button>
-
-                                    @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <!-- <a class="btn btn-link" href="/olvidaste">
                                         Forgot Your Password?
-                                    </a>
-                                    @endif
+                                    </a> -->
                                 </div>
                             </div>
-
                         </form>
+
+                        <hr>
+
+                        <div class="text-center mt-3">
+
+                            <a href="{{ url('/auth/google') }}"
+                                class="btn btn-light border d-inline-flex align-items-center gap-2 px-4 py-2 shadow-sm">
+
+                                {{-- Icono oficial Google --}}
+                                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google"
+                                    width="20" height="20">
+
+                                <span>Continuar con Google</span>
+                            </a>
+
+                        </div>
+
+
                     </div>
                 </div>
             </div>
