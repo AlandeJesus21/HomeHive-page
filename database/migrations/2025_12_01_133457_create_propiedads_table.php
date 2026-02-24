@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('cercanias', 100);
             $table->text('descripcion')->nullable();
             $table->string('imagen')->nullable();
+            $table->string('status')->default('libre');
             $table->timestamps();
         });
     }

@@ -23,7 +23,8 @@
                 <a class="nav-link" href="{{ route('inquilino.comentarios', $propiedad->id) }}">Comentarios</a>
             </li>
             <li class="nav-item ms-auto">
-                <a class="btn btn-primary text-white" href="#">Reservar</a>
+                <a href="{{ route('checkout.index', $propiedad->id) }}" class="btn btn-primary text-white">Rentar
+                    ahora</a>
             </li>
         </ul>
 

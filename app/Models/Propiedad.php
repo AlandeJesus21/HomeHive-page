@@ -28,6 +28,7 @@ class Propiedad extends Model
         'cercanias',
         'descripcion',
         'imagen',
+        'status',
         'user_id',
     ];
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\AppReviewController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -158,6 +159,8 @@ Route::middleware(['auth', 'role:inquilino', 'nocache'])->group(function () {
     Route::get('/inquilino/favoritos', [InquilinoController::class, 'favoritos'])
         ->name('inquilino.favoritos');
 
+    Route::get('/inquilino/mis-rentas', [InquilinoController::class, 'rentas'])->name('inquilino.rentas');
+
     // Favoritos
     Route::post('/favoritos/{id}/toggle', [FavoritoController::class, 'toggle'])
         ->name('favoritos.toggle');
@@ -257,3 +260,16 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
         });
 
     });
+
+    /*
+|--------------------------------------------------------------------------
+| RUTA DE STRIPE
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/checkout/{id}', [PaymentController::class, 'checkout'])->name('checkout.index');
+Route::post('/checkout', [PaymentController::class, 'store'])->name('checkout.store');
+
+// Retorno de Stripe (Importante: debe coincidir con el success_url del controlador)
+Route::get('/success', [PaymentController::class, 'success'])->name('checkout.success');
+Route::get('/cancel', [PaymentController::class, 'cancel'])->name('checkout.cancel');
