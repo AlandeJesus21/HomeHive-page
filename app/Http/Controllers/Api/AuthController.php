@@ -27,7 +27,7 @@ class AuthController extends Controller
             "name" => $validated["name"],
             "email" => $validated["email"],
             "password" => Hash::make($validated["password"]),
-            "rol" => "usuario", // por si usas roles
+            "rol" => "usuario", 
             "profile_photo" => null
         ]);
 
@@ -51,7 +51,7 @@ class AuthController extends Controller
         $validated = $request->validate([
             "email" => "required|email",
             "password" => "required|string",
-            "device_name" => "required|string",
+            "device_name" => "nullable|string",
         ]);
 
         $user = User::where("email", $validated["email"])->first();
@@ -111,6 +111,35 @@ class AuthController extends Controller
         return response()->json([
             "success" => true,
             "data" => $request->user()
+        ]);
+    }
+
+    public function update(Request $request): JsonResponse
+    {
+        $user = $request->user();
+
+        $validated = $request->validate([
+            "name" => "sometimes|required|string|max:255",
+            "email" => "sometimes|required|email|unique:users,email," . $user->id,
+            "password" => "sometimes|required|string|min:8|confirmed",
+            "profile_photo" => "nullable|image|max:2048"
+        ]);
+
+        if (isset($validated["password"])) {
+            $validated["password"] = Hash::make($validated["password"]);
+        }
+
+        if ($request->hasFile("profile_photo")) {
+            $path = $request->file("profile_photo")->store("profile_photos", "public");
+            $validated["profile_photo"] = $path;
+        }
+
+        $user->update($validated);
+
+        return response()->json([
+            "success" => true,
+            "message" => "Perfil actualizado exitosamente",
+            "data" => $user
         ]);
     }
 }

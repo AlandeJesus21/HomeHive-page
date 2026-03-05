@@ -93,8 +93,8 @@
                                 <div class="invalid-feedback">Ingrese la calle.</div>
                             </div>
 
-                            <input type="hidden" name="latitud" id="latitud">
-                            <input type="hidden" name="longitud" id="longitud">
+                            <input type="hidden" name="latitud" id="latitud" readonly>
+                            <input type="hidden" name="longitud" id="longitud" readonly>
 
                             <div class="col-12">
                                 <label class="form-label">Precio:</label>

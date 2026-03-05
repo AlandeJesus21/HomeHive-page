@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\AppReviewApiController;
 // Registro y login
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->post('/user/update', [AuthController::class, 'update']);
 
 // Listar propiedades (público)
 Route::get('/propiedades', [PropiedadController::class, 'index']);
